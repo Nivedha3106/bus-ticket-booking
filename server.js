@@ -28,7 +28,7 @@ app.use('/api/tickets',TicketRoute)
 app.use('/api/bookings',BookingRoute)
 
 const PORT= process.env.PORT || 3002
-app.listen(PORT,()=>{
+app.listen(process.env.PORT || 3002,()=>{
     console.log('Server is running on port 3002')
 })
 
