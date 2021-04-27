@@ -1,31 +1,32 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+
+const { Schema } = mongoose;
 
 const ticketSchema = Schema({
-    name:{
-        type: String,
-    },
-    age:{
-        type: String,
-    },
-    email:{
-        type: String,
-        
-    },
-    phone:{
-        type: String,
-        
-    },
-    source:{
-        type:String,
-    },
-    dest:{
-        type:String,
-    },
-    time:{
-        type:String,
-    }
-})
+  name: {
+    type: String,
+  },
+  age: {
+    type: String,
+  },
+  email: {
+    type: String,
 
-const Ticket = mongoose.model('Ticket',ticketSchema)
-module.exports = Ticket
+  },
+  phone: {
+    type: String,
+
+  },
+  source: {
+    type: String,
+  },
+  dest: {
+    type: String,
+  },
+  time: {
+    type: String,
+  },
+});
+
+const Ticket = mongoose.model('Ticket', ticketSchema);
+module.exports = Ticket;
