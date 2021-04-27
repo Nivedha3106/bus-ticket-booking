@@ -33,29 +33,6 @@ const show =(req,res,nex)=>{
         
     })
 }
-//add the seat 
-/*const store = (req,res,next)=>{
-    let booking = new Booking({
-        name: req.body.name,
-        seatID: req.body.seatID,
-        from: req.body.from,
-        to:req.body.to,
-        time:req.body.time,
-        date: req.body.date
-    })
-    booking.save()
-
-    .then(response =>{
-        res.json({
-            message: 'Booking added successfully'
-        })
-    })
-    .catch(error => {
-        res.json({
-            message: 'An error occured'
-        })
-    })
-}*/
 
 const store = (req,res,next) => {
     let booking = new Booking({
@@ -64,7 +41,6 @@ const store = (req,res,next) => {
         dest:req.body.dest,
         fare:req.body.fare,
         time:req.body.time
-    
         
     })
     booking.save()
