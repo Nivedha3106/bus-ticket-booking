@@ -6,6 +6,7 @@ const cors = require("cors")
 
 const TicketRoute = require('./routes/ticket')
 const BookingRoute = require('./routes/booking')
+const USerRoute = require('./routes/user')
 
 require('dotenv/config')
 mongoose.Promise = global.Promise;
@@ -26,6 +27,7 @@ app.use(cors())
 
 app.use('/api/tickets',TicketRoute)
 app.use('/api/bookings',BookingRoute)
+app.use('/api/users',USerRoute)
 
 const PORT= process.env.PORT || 3002
 app.listen(PORT,()=>{
