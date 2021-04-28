@@ -10,7 +10,4 @@ router.get('/show/:bookingID', BookingController.show);
 router.post('/store', BookingController.store);
 router.put('/update', BookingController.update);
 router.get('/destroy/:bookingID', BookingController.destroy);
-router.post('/clear', BookingController.clear);
-router.post('/countTickets', BookingController.countTickets);
-
 module.exports = router;
