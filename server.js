@@ -7,6 +7,7 @@ const cors = require('cors');
 const TicketRoute = require('./routes/ticket');
 const BookingRoute = require('./routes/booking');
 const UserRoute = require('./routes/user');
+const SeatRoute = require('./routes/seat');
 
 require('dotenv/config');
 
@@ -32,6 +33,7 @@ app.use(cors());
 app.use('/api/tickets', TicketRoute);
 app.use('/api/bookings', BookingRoute);
 app.use('/api/users', UserRoute);
+app.use('/api/seats', SeatRoute);
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {

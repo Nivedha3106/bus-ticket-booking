@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const User = require('../models/User');
 
 const login = (req, res) => {
@@ -32,10 +33,10 @@ const signUp = (req, res) => {
     password: req.body.password,
     confirmPwd: req.body.confirmPwd,
   });
-  /* let errors=[];
-    if(password !== confirmPwd){
-        errors.push({msg: 'Password do not match'});
-    } */
+  const errors = [];
+  if (password !== confirmPwd) {
+    errors.push({ msg: 'Password do not match' });
+  }
   New.save()
     .then(() => {
       res.json({
