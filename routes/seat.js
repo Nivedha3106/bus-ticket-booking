@@ -4,9 +4,9 @@ const router = express.Router();
 
 const Seat = require('../controllers/SeatController');
 
-router.post('/open', Seat.open);
-router.post('/close', Seat.close);
+router.get('/open', Seat.open);
+router.get('/close', Seat.close);
 router.get('/', Seat.index);
-router.get('/store', Seat.store);
+router.post('/store', Seat.store);
 
 module.exports = router;

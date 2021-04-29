@@ -37,16 +37,31 @@ const store = (req, res) => {
 
 // to view open tickets
 const open = (req, res) => {
-  const isOpen = Seat.find({ seatStatus: 'open' });
-  if (isOpen < 1) res.send('No open tickets');
-  else res.send(isOpen);
+  Seat.find({ seatStatus: 'open' })
+    .then((response) => {
+      if (response < 1) res.json('No open tickets');
+      else res.json(response);
+    })
+
+    .catch(() => {
+      res.json({
+        message: 'An error occured',
+      });
+    });
 };
 
 // to view close tickets
 const close = (req, res) => {
-  const isClose = Seat.find({ seatStatus: 'close' });
-  if (isClose < 1) res.send('Bus full');
-  else res.send(isClose);
+  Seat.find({ seatStatus: 'close' })
+    .then((response) => {
+      if (response < 1) res.json('Bus full');
+      else res.json(response);
+    })
+    .catch(() => {
+      res.json({
+        message: 'An error occures',
+      });
+    });
 };
 
 module.exports = {
